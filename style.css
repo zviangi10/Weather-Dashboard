@@ -1,0 +1,143 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(6, 41, 16, 0.53);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(to right, #4c6781, #003366);
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8 px rgba(6, 41, 16, 0.53);
+}
+
+#title {
+    width: #fff;
+    text-align: center;
+    font-size: 3.00em;
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #251111;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+input {
+    padding: 1opx;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #053c78;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    background-color: #256c25;
+}
+
+.weather-section {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#current-weather {
+    flex: 3;
+    background-color: #b5b0b0;
+    padding: 23px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#forecast {
+    width: 100%;
+}
+
+.forecast-item {
+    background-color: #655e5e;
+    color: #fff;
+    padding: 25px;
+    border-radius: 9px;
+    margin: 10px;
+    flex: 1;
+    max-width: 170px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.03 ease;
+}
+
+#forecast-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.forecast-item:hover {
+    transform: scale(1.05);
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#history-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #655e5e;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    transition: background-color 0.03;
+}
+
+#history-list:hover {
+    background-color: #ccc;
+}
