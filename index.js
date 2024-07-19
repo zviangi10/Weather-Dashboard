@@ -1,4 +1,4 @@
-const apiKey = "12341234123412341234123412341234"
+const apiKey = '9c614126f28bc09f4de57022de9fecc5'
 
 document.getElementById('city-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -13,7 +13,7 @@ function getCityCoordinates(city) {
     .then(response => response.json())
     .then(data => {
         const {lat, lon } = data.coord;
-        getWeatherData(lat, lon, city);
+        displayWeatherData(lat, lon, city);
         addToHistory(city);
     })
     .catch(error => console.error('Error fetching city coordinates:', error));
@@ -24,7 +24,7 @@ function displayWeatherData(lat, lon, city) {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        displayWeatherData(data,city);
+        displayCurrentWeather(data,city);
         displayForecast(data);
     })
     .catch(error => console.error('Error fatching weather data:', error));
@@ -33,7 +33,7 @@ function displayWeatherData(lat, lon, city) {
 function displayCurrentWeather(data,city) {
     const currentWeather = data.list[0];
     const weatherHTML = `
-    <h3>${cityt} ${new Date(currentWeather.dt * 1000).toLocaleDateString()}</h3>
+    <h3>${city} ${new Date(currentWeather.dt * 1000).toLocaleDateString()}</h3>
     <p>Temperature: ${currentWeather.main.temp} °C</p>
     <p>Humidity: ${currentWeather.main.humidity} %</p>
     <p>Wind Speed: ${currentWeather.wind.speed} m/s</p>
@@ -45,11 +45,12 @@ function displayCurrentWeather(data,city) {
 }
 
 function displayForecast(data) {
-    const forecastHTML = data.list.slice(1,6).map(day => `
+    const forecastHTML = data.list.slice(1,6).map(day =>
+         `
         <div class="forecast-item">
-            <p> Date: ${new Date(dat.dt * 1000).toLocaleDateString()}</p>
+            <p> Date: ${day.dt }</p>
             <p>Temperature: ${day.main.temp} °C</p>
-            <p>Humidity: ${dai.main.humidity} %</p>
+            <p>Humidity: ${day.main.humidity} %</p>
             <p>Wind Speed: ${day.wind.speed} m.s</p>
             <img src="https://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="${day.weather[0].description}">
         </div>
